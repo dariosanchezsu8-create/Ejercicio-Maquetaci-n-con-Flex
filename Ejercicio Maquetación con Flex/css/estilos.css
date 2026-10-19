@@ -1,0 +1,133 @@
+/*Para la organizacion de una web con grid no solo vale con declara
+en el inicio en el body/contenedor que englobe todo el CSS de la web
+porque si los contenedores hijos como header,main,footer si van hacer caso
+a estos limites impuestos. Pero no dentro de los hijos por lo que dentro
+de los contenedores hijos hay que poner otro grid interno para organizar
+la informacion dentro de esta como corresponda.
+*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+       
+
+}
+.contenedor {
+	background:#ccc;
+	width:95%;
+	margin:auto;
+	display:grid;
+	grid-template-columns:10% 80% 10%;
+	grid-template-rows:10% 80% 10%;
+
+
+}
+
+
+body {
+	background:#e9e9e9;
+}
+
+header {
+	background:#2c3e50;
+	width:100%;
+	height:100px;
+	padding:20px;
+	grid-column:1/4;
+	grid-row:1/2;
+
+
+}
+ .logo{
+	grid-column:1/2;
+	grid-row:1/2 ;
+	align-items: center;
+ }
+
+header .logo img {
+	width:50px;
+	vertical-align: top;
+}
+header .logo a {
+	color:#fff;
+	font-size:30px;
+	line-height:50px;
+}
+
+
+header nav {
+	width:40%;
+	grid-area: 1/3/2/4;
+}
+
+header nav a {
+	background:#c0392b;
+	color:#fff;
+	text-align: center;
+	padding:10px;
+
+	/* Flexbox */
+}
+
+
+main {
+	background:#fff;
+	padding:5px;
+	grid-column:2/4;
+	grid-row:2/3;
+	display:grid;
+	grid-template-columns: 80% 20%;
+
+	
+
+}
+
+	.texto{
+		margin:20px;
+		width: 90%;
+	}
+
+    .texto article:first-child {
+
+        border-bottom:1px solid #000;
+    }
+    
+    .imagenes {
+    	background-color: #5c5c5c;
+    	width: 100%;
+		height:80%;
+    }
+
+section img {
+    margin:20px;
+    width: 80%
+}
+footer {
+	margin-top:0;
+	padding-top:0;
+	background:#2c3e50;
+    width: 100%;
+	height: 100px;
+	padding:30px;
+	grid-area:3/1/4/4;
+}
+footer p  {
+    color: #fff;
+	grid-column:1/2;
+	grid-row:·3/4;
+	display: grid;
+	grid-template-columns: auto 1fr;
+
+}
+footer div {
+	width: 100%;
+	grid-column:2;
+	justify-self: end;
+	display: grid;
+}
+footer div img{
+    width: 20px;
+	margin-left: auto;
+}
